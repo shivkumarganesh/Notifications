@@ -10,3 +10,4 @@ Notifications is a simple javascript library that enables an individual to creat
 5. Wrapping up the code and creating the distributable
 6. Thats it :P 
 7. Let the hack being. lol
+8. Also  create a site using the same.
