@@ -21,7 +21,21 @@ Notify = (function() {
      */
     launchNotiWindow = function(title, options) {
         var notify;
-        return notify = new Notification(title, options);
+        notify = new Notification(title, options);
+        notify.onclick = function() {
+            console.log("Notification is Clicked");
+            document.getElementsByTagName("body")[0].innerHTML="lol";
+        };
+        notify.onshow = function() {
+            console.log("Notification is Visible");
+        };
+        notify.onerror = function() {
+            console.log("Notification is error"+error);
+        }
+        notify.onclose = function() {
+            console.log("Notification is closed");
+        }
+
     };
     /**
      * Checks for the permission from the user
@@ -31,9 +45,10 @@ Notify = (function() {
      */
     getPermissionAndLaunch = function(title, options) {
         Notification.requestPermission(function(permission) {
-            if(permission==='granted'){
-                return launchNotiWindow(title, options);
-            } 
+            if (permission === 'granted') {
+                launchNotiWindow(title, options);
+            }
+            else if(permission === '')
         });
     };
     /**
