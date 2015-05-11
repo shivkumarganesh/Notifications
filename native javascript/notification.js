@@ -1,20 +1,24 @@
 var Notify;
 Notify = (function() {
-  var launchNotification;
+  var getPermissionAndLaunch, launchNotiWindow;
   function Notify(title, options) {
     this.title = title;
     this.options = options;
   }
-  launchNotification = function() {
-    var notify;
-    return notify = new Notification(this.title);
+  Notify.prototype.print = function() {
+    return console.log(this.title + this.options);
   };
-  Notify.prototype.getPermission = function() {
+  launchNotiWindow = function(title, options) {
+    var notify;
+    return notify = new Notification(title, options);
+  };
+  getPermissionAndLaunch = function(title, options) {
     return Notification.requestPermission(function(permission) {
-      if (permission === "granted") {
-        return launchNotification();
-      }
+      return launchNotiWindow(title, options);
     });
+  };
+  Notify.prototype.launch = function() {
+    return getPermissionAndLaunch(this.title, this.options);
   };
   return Notify;
 })();
