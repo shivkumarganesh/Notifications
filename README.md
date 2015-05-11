@@ -11,3 +11,4 @@ Notifications is a simple javascript library that enables an individual to creat
 6. Thats it :P 
 7. Let the hack being. lol
 8. Also  create a site using the same.
+9. Timeout for the Notification

@@ -30,8 +30,10 @@ Notify = (function() {
      * @return {NA}         NA
      */
     getPermissionAndLaunch = function(title, options) {
-        return Notification.requestPermission(function(permission) {
-            return launchNotiWindow(title, options);
+        Notification.requestPermission(function(permission) {
+            if(permission==='granted'){
+                return launchNotiWindow(title, options);
+            } 
         });
     };
     /**

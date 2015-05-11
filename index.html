@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Notification Demo</title>
+		<script src="native_javascript/notification.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var options = {
+		        icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/stock-illustration-46749378-cute-piglet-icon-animal-icons-series.jpg',
+		        title: 'Quick One!',
+		        body: 'This is the Demo Body',
+		        sticky:true,
+		        timeout: 1000, // close notification in 1 sec
+		        onclick: function () {
+		            console.log('Pewpew');
+		        }
+		    };
+		function getNotification(){
+			var notify = new Notify('Demo Title',options);
+			notify.launch();
+		}
+		
+		</script>
+		<button onclick="getNotification()">DEMO</button>
+	</body>
+</html>
