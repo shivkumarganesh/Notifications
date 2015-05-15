@@ -2,7 +2,7 @@
  * Defining Notification Class
  */
 var Notify;
-Notify = (function() {
+Notify = (function () {
     var getPermissionAndLaunch, launchNotiWindow;
     /**
      * Notify Constructor
@@ -19,22 +19,22 @@ Notify = (function() {
      * @param  {Object} options Object with Options for Notification
      * @return {Notification}         Object of Notification is returned along with the Notification being launched.
      */
-    launchNotiWindow = function(title, options) {
+    launchNotiWindow = function (title, options) {
         var notify;
         notify = new Notification(title, options);
-        notify.onclick = function() {
+        notify.onclick = function () {
             console.log("Notification is Clicked");
-            document.getElementsByTagName("body")[0].innerHTML="lol";
+            document.getElementsByTagName("body")[0].innerHTML = "lol";
         };
-        notify.onshow = function() {
+        notify.onshow = function () {
             console.log("Notification is Visible");
         };
-        notify.onerror = function() {
-            console.log("Notification is error"+error);
-        }
-        notify.onclose = function() {
+        notify.onerror = function () {
+            console.log("Notification is error" + error);
+        };
+        notify.onclose = function () {
             console.log("Notification is closed");
-        }
+        };
 
     };
     /**
@@ -43,19 +43,19 @@ Notify = (function() {
      * @param  {Object} options Object with Options for Notification
      * @return {NA}         NA
      */
-    getPermissionAndLaunch = function(title, options) {
-        Notification.requestPermission(function(permission) {
+    getPermissionAndLaunch = function (title, options) {
+        Notification.requestPermission(function (permission) {
             if (permission === 'granted') {
                 launchNotiWindow(title, options);
+            } else if (permission === ''){
             }
-            else if(permission === '')
         });
     };
     /**
      * Prototype function for invoking the Notification object.
      * @return {NA} [NA]
      */
-    Notify.prototype.launch = function() {
+    Notify.prototype.launch = function () {
         return getPermissionAndLaunch(this.title, this.options);
     };
     return Notify;
