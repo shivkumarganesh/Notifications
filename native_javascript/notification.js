@@ -1,7 +1,9 @@
 /**
  * Defining Notification Class
  */
-var Notify;
+var NotifyMe={};
+(function(window,NotifyMe){
+    var Notify;
 Notify = (function () {
     var getPermissionAndLaunch, launchNotiWindow;
     /**
@@ -60,3 +62,11 @@ Notify = (function () {
     };
     return Notify;
 })();
+
+NotifyMe.launch=function(title,options){
+  var tempObj =  new Notify(title,options)  ;
+  tempObj.launch();
+};
+
+return window.NotifyMe;
+})(this,NotifyMe);
