@@ -1,11 +1,12 @@
 /**
- * Defining Notification Class
+ * Global Variable NotifyMe
  */
 var NotifyMe={};
 (function(window,NotifyMe){
     var Notify;
 Notify = (function () {
     var getPermissionAndLaunch, launchNotiWindow;
+    
     /**
      * Notify Constructor
      * @param {String} title   Title for Notification
@@ -15,6 +16,7 @@ Notify = (function () {
         this.title = title;
         this.options = options;
     }
+    
     /**
      * Helps in launching Notification(Private)
      * @param  {String} title   Title for Notification
@@ -38,6 +40,7 @@ Notify = (function () {
         };
 
     };
+    
     /**
      * Checks for the permission from the user
      * @param  {String} title   Title for Notification
