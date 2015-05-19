@@ -26,7 +26,6 @@ Notify = (function () {
         notify = new Notification(title, options);
         notify.onclick = function () {
             console.log("Notification is Clicked");
-            document.getElementsByTagName("body")[0].innerHTML = "lol";
         };
         notify.onshow = function () {
             console.log("Notification is Visible");
