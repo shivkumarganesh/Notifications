@@ -45,6 +45,9 @@ A typical implementation looks something like this.[Sample can be found in index
 ### Todo's
 
  - Write Tests for the same
+ - Direction Integration
+ - Language Integration
+ - Methods Integration
  - Integrate with  Travis CI
  - Fix the options to extend to default
  - Propagate it through the community
