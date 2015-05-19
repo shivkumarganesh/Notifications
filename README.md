@@ -12,7 +12,7 @@ NotifyMe is a simple JavaScript Library written in JavaScript and implements the
 
 The implementation for the same are pretty easy and straight forward. Import the NotifyMe.js from the dist folder and prepare the object to be passes to it.
 
-A typical implementation looks something like this.
+A typical implementation looks something like this.[Sample can be found in index.html]
 
 ```js
 (function(){
