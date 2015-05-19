@@ -1,6 +1,6 @@
 {
   "name": "NotifyMe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NotifyMe enables you to create web notifications pretty easily - \"Just Call me and Launch!!\"",
   "main": "index.js",
   "dependencies": {

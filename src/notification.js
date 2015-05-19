@@ -26,19 +26,18 @@ Notify = (function () {
     launchNotiWindow = function (title, options) {
         var notify;
         notify = new Notification(title, options);
-        notify.onclick = function () {
-            console.log("Notification is Clicked");
+        notify.onclick = function(){
+            options.onclick();
         };
-        notify.onshow = function () {
-            console.log("Notification is Visible");
+        notify.onshow = function(){
+            options.onshow();
         };
-        notify.onerror = function () {
-            console.log("Notification is error" + error);
+        notify.onerror = function(){
+            options.onerror();
         };
-        notify.onclose = function () {
-            console.log("Notification is closed");
+        notify.onclose = function(){
+            options.onclose();
         };
-
     };
     
     /**
