@@ -38,7 +38,7 @@ A typical implementation looks something like this.[Sample can be found in index
 > Note: Right now any user should provide a default options for the 4 different callbacks. In the next version we would extend this object to a custom object so as to have a default object in place. This would not allow errors to occour at console. As such the functionalities are fine and working.
 
 ### Version
-1.0.1
+0.0.1
 
 
 
