@@ -53,6 +53,7 @@ A typical implementation looks something like this.[Sample can be found in index
  - Propagate it through the community
  - Prepare samples with WebSocket
  - Integrate Alarm API with this
+ - Trust Issue Configuration(If the user Denies then report back to the Developer)
 
 License
 ----
