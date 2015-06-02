@@ -47,9 +47,10 @@ Notify = (function () {
         notify.onclick = function(){
             options.onclick();
         };
-        notify.onshow = function(){
+        /*Commented out onshow() since it was deprecated*/
+        /*notify.onshow = function(){
             options.onshow();
-        };
+        };*/
         notify.onerror = function(){
             options.onerror();
         };
