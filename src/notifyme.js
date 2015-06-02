@@ -17,7 +17,10 @@ Notify = (function () {
         this.options = options;
     }
     
-    /*Code to generate GUID for each Notification*/
+   /**
+     * UUID Generator
+     * @return {String} Object  Returns a string of UUID for each of the Notification
+     */
     generateGuid=function(){
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
@@ -47,10 +50,6 @@ Notify = (function () {
         notify.onclick = function(){
             options.onclick();
         };
-        /*Commented out onshow() since it was deprecated*/
-        /*notify.onshow = function(){
-            options.onshow();
-        };*/
         notify.onerror = function(){
             options.onerror();
         };
