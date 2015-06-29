@@ -60,7 +60,9 @@
             this.notification.onerror = this.options.onerror;
             this.notification.onclose = this.options.onclose;
         } else {
-            NotifyMe.requestPermission().then(this.launch.bind(this));
+            NotifyMe.requestPermission()
+                .then(this.launch.bind(this))
+                .catch(console.warn.bind(console));
         }
         return this.notification;
     };

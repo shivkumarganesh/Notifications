@@ -16,4 +16,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['compress']);
+gulp.task('default', ['compress', 'watch']);
