@@ -40,11 +40,15 @@
 
 
     /**
-     *  Generate a random tag string.
-     *  @return {String} A randomly-generated tag string.
+     *  Generate a random UUID string.
+     *  @return {String} A randomly-generated UUID string.
      */
     function generateTag() {
-        return Math.floor(Math.random() * 0x10000000).toString(16);
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16).substring(1);
+        }
+        return [s4() + s4(), s4(), s4(), s4(), s4() + s4() + s4()].join('-');
     }
 
 
