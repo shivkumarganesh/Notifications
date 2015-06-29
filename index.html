@@ -1,28 +1,32 @@
+<!doctype html>
 <html>
-	<head>
-		<title>Notification Demo</title>
-		<script src="dist/notifyme.js"></script>
-	</head>
-	<body>
-		<script type="text/javascript">
-		var options = {
-		        icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/stock-illustration-46749378-cute-piglet-icon-animal-icons-series.jpg',
-		        body: 'This is a simple demo for the notification API',
-		        onclick:function(){
-		        	console.log("On Click Triggered");
-		        },
-		        onerror:function(){
-		        	console.log("On Error Triggered");
-		        },
-		        onclose:function(){
-		        	console.log("On Close Triggered");
-		        }
-		    };
-		function getNotification(){
-			NotifyMe.launch('Are you Looking?!',options);
-		}
-		
-		</script>
-		<button onclick="getNotification()">DEMO</button>
-	</body>
+    <head>
+        <title>Notification Demo</title>
+    </head>
+
+    <body>
+        <button>DEMO</button>
+
+        <script src="dist/notifyme.js"></script>
+        <script type="text/javascript">
+            var options = {
+                icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/stock-illustration-46749378-cute-piglet-icon-animal-icons-series.jpg',
+                body: 'This is a simple demo for the notification API',
+                onclick:function(){
+                    console.log("On Click Triggered");
+                },
+                onerror:function(){
+                    console.log("On Error Triggered");
+                },
+                onclose:function(){
+                    console.log("On Close Triggered");
+                }
+            };
+
+            var button = document.querySelector('button');
+            button.addEventListener('click', function() {
+                NotifyMe.launch('Are you Looking?!',options);
+            });
+        </script>
+    </body>
 </html>
