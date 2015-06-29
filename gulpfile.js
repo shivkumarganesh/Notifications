@@ -11,4 +11,9 @@ gulp.task('compress', function () {
 });
 
 
+gulp.task('watch', function() {
+    gulp.watch('./src/*.js', ['compress']);
+});
+
+
 gulp.task('default', ['compress']);
