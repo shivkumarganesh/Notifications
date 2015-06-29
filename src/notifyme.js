@@ -29,6 +29,11 @@
     }
 
 
+    function generateTag() {
+        return Math.floor(Math.random() * 0x10000000).toString(16);
+    }
+
+
     function NotifyMe(title, body, options) {
         if (!(this instanceof NotifyMe)) {
             return new NotifyMe(title, body, options);
@@ -36,6 +41,7 @@
         this.title = title;
         this.options = extend(defaultOptions, options);
         this.options.body = body;
+        this.options.tag = generateTag();
     }
 
     NotifyMe.permissionGranted = false;
@@ -59,12 +65,12 @@
             this.notification.onclick = this.options.onclick;
             this.notification.onerror = this.options.onerror;
             this.notification.onclose = this.options.onclose;
+            return Promise.resolve(this.notification);
         } else {
-            NotifyMe.requestPermission()
+            return NotifyMe.requestPermission()
                 .then(this.launch.bind(this))
                 .catch(console.warn.bind(console));
         }
-        return this.notification;
     };
 
 
