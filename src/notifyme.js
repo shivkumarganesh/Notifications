@@ -24,7 +24,9 @@
     function extend(base, extension) {
         var extended = {};
         for (var key in base) {
-            extended[key] = base[key];
+            if (base.hasOwnProperty(key)) {
+                extended[key] = base[key];
+            }
         }
         for (var key in extension) {
             if (extension.hasOwnProperty(key)) {
