@@ -16,8 +16,7 @@ gulp.task('lint', function() {
     gulp.src('./src/*.js')
         .pipe(jscs())
         .on('error', gutil.noop)
-        .pipe(stylish())
-        .pipe(gulp.dest('./dist'));
+        .pipe(stylish());
 });
 
 
