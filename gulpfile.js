@@ -5,13 +5,6 @@ var jscs = require('gulp-jscs');
 var stylish = require('gulp-jscs-stylish');
 
 
-gulp.task('compress', function () {
-    gulp.src('./src/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist'));
-});
-
-
 gulp.task('lint', function() {
     gulp.src('./src/*.js')
         .pipe(jscs())
@@ -20,9 +13,17 @@ gulp.task('lint', function() {
 });
 
 
-gulp.task('watch', function() {
-    gulp.watch('./src/*.js', ['lint', 'compress']);
+gulp.task('build', ['lint'], function() {
+    gulp.src('./src/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist'));
+    gulp.src('./src/vendor/**/*').pipe(gulp.dest('./dist/vendor/'));
 });
 
 
-gulp.task('default', ['lint', 'compress', 'watch']);
+gulp.task('watch', function() {
+    gulp.watch('./src/*.js', ['lint', 'build']);
+});
+
+
+gulp.task('default', ['lint', 'build', 'watch']);
