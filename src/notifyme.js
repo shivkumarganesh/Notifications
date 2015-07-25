@@ -9,7 +9,10 @@
         icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/'
             + 'stock-illustration-46749378-cute-piglet-icon-animal-icons'
             + '-series.jpg',
-        lang: 'en-US'
+        lang: 'en-US',
+        onclick: function() {},
+        onclose: function() {},
+        onerror: function() {}
     };
 
 
