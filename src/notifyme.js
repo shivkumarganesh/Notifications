@@ -6,9 +6,10 @@
     }
 })(this, function() {
     var defaultOptions = {
-        icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/'
-            + 'stock-illustration-46749378-cute-piglet-icon-animal-icons'
-            + '-series.jpg',
+        icon: 'http://us.cdn2.123rf.com/168nwm/dxinerz/dxinerz1506/'
+            + 'dxinerz150601488/41355464-bell-notification-call-icon-vector'
+            + '-image-can-also-be-used-for-education-academics-and-science'
+            + '-suitab.jpg',
         lang: 'en-US',
         onclick: function() {},
         onclose: function() {},
