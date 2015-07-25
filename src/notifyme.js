@@ -34,9 +34,9 @@
         for (var key in extension) {
             if (extension.hasOwnProperty(key)) {
                 if (extension[key].constructor === Object) {
-                    base[key] = extend(base[key], extension[key]);
+                    extended[key] = extend(base[key], extension[key]);
                 } else {
-                    base[key] = extension[key];
+                    extended[key] = extension[key];
                 }
             }
         }
@@ -60,20 +60,15 @@
     /**
      *  NotifyMe Constructor
      *  @param {String} `title`     The title for the notification instance.
-     *  @param {String} `body`      The body string for the notification
-     *      instance. This will just be added to the options object, but still
-     *      placed here to simplify the process for users who just want to use
-     *      the default options.
      *  @param {Object} `options`   The options parameter for the notification
      *      instance and is used to extend the default options.
      */
-    function NotifyMe(title, body, options) {
+    function NotifyMe(title, options) {
         if (!(this instanceof NotifyMe)) {
-            return new NotifyMe(title, body, options);
+            return new NotifyMe(title, options);
         }
         this.title = title;
         this.options = extend(defaultOptions, options || {});
-        this.options.body = body;
         this.options.tag = generateTag();
     }
 
