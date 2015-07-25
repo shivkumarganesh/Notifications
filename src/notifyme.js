@@ -45,14 +45,19 @@
 
 
     /**
+     *  Generate a random four-digit hex value.
+     */
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16).substring(1);
+    }
+
+
+    /**
      *  Generate a random UUID string.
      *  @return {String} A randomly-generated UUID string.
      */
     function generateTag() {
-        function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16).substring(1);
-        }
         return [s4() + s4(), s4(), s4(), s4(), s4() + s4() + s4()].join('-');
     }
 
