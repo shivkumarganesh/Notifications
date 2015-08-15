@@ -1,28 +1,22 @@
+<!doctype html>
 <html>
-	<head>
-		<title>Notification Demo</title>
-		<script src="dist/notifyme.js"></script>
-	</head>
-	<body>
-		<script type="text/javascript">
-		var options = {
-		        icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/stock-illustration-46749378-cute-piglet-icon-animal-icons-series.jpg',
-		        body: 'This is a simple demo for the notification API',
-		        onclick:function(){
-		        	console.log("On Click Triggered");
-		        },
-		        onerror:function(){
-		        	console.log("On Error Triggered");
-		        },
-		        onclose:function(){
-		        	console.log("On Close Triggered");
-		        }
-		    };
-		function getNotification(){
-			NotifyMe.launch('Are you Looking?!',options);
-		}
-		
-		</script>
-		<button onclick="getNotification()">DEMO</button>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Notification Demo</title>
+    </head>
+
+    <body>
+        <button>notify</button>
+
+        <script src="dist/vendor/promise-polyfill.js"></script>
+        <script src="dist/notifyme.js"></script>
+        <script type="text/javascript">
+            var button = document.querySelector('button');
+            button.addEventListener('click', function() {
+                var title = 'Are you looking?';
+                var body = 'This is a simple demo for the notification API';
+                NotifyMe(title, { body: body }).launch();
+            });
+        </script>
+    </body>
 </html>
