@@ -1,0 +1,19 @@
+{
+  "name": "NotifyMe",
+  "version": "1.0.1",
+  "homepage": "https://github.com/sesubash/NotifyMe",
+  "authors": [
+    "subash <sesubash@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6"
+  }
+}

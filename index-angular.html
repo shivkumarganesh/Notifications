@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Notification Demo</title>
+    </head>
+
+    <body ng-app="app" ng-controller="appcontroller">
+        <button ng-click="nofity();">angular notify</button>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="dist/vendor/promise-polyfill.js"></script>
+        <script src="dist/angular-notifyme.js"></script>
+        <script type="text/javascript">
+            //====================================
+            // Init Angular module and controller
+            //====================================
+            angular.module('app', ['notifyme']).
+            controller('appcontroller', function($scope, NotifyMe) {
+                $scope.nofity = function(){
+                  var title = "I'm from Angular ?";
+                  var body = 'This is a simple demo for the notification API Angular Service';
+                  NotifyMe.launch(title, {
+                      body: body,
+                      onclick:function(){
+                          console.log("On Click Triggered");
+                      },
+                      onerror:function(){
+                          console.log("On Error Triggered");
+                      },
+                      onclose:function(){
+                          console.log("On Close Triggered");
+                      }
+                  });
+                };
+            });
+        </script>
+    </body>
+</html>
