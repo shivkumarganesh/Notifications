@@ -35,6 +35,38 @@ A typical implementation looks something like this.[Sample can be found in index
     NotifyMe.launch(title,options);
 })();
 ```
+
+```Angularjs
+Add promise-polyfill and angular-notifyme files into your html.
+
+<script src="dist/vendor/promise-polyfill.js"></script>
+<script src="dist/angular-notifyme.js"></script>
+
+Inject notifyme dependency into your main module.
+
+angular.module('app', ['notifyme']);
+
+Inject NofifyMe service into your controller and launch NotifyMe in the same way,
+
+var options = {
+        icon: 'http://i.istockimg.com/file_thumbview_approve/46749378/3/stock-illustration-46749378-cute-piglet-icon-animal-icons-series.jpg',
+        body: 'This is a simple demo for the notification API',
+        onclick:function(){
+          console.log("On Click Triggered");
+        },
+        onerror:function(){
+          console.log("On Error Triggered");
+        },
+        onclose:function(){
+          console.log("On Close Triggered");
+        }
+    };
+
+NotifyMe.launch(title,options);
+
+Open index-angular.html file for sample implementation.
+
+```
 > Note: Right now any user should provide a default options for the 4 different callbacks. In the next version we would extend this object to a custom object so as to have a default object in place. This would not allow errors to occour at console. As such the functionalities are fine and working.
 
 ### Version
@@ -62,6 +94,6 @@ MIT
 
 
 > To Contact Author or Contribute
-> mailat: gshiv.sk@gmail.com 
+> mailat: gshiv.sk@gmail.com
 > skype: gshiv.sk
 > Please fork and give me a pull request [If interested to contribute]
